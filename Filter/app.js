@@ -40,3 +40,20 @@ form.addEventListener("keyup", () => {
     });
     displayProducts();
 });
+
+// Display filter buttons
+const companiesDom = document.querySelector(".companies");
+
+const displayButtons = () => {
+    const buttons = [
+        "all",
+        ...new Set(products.map((productItem) => productItem.company)),
+    ];
+
+    companiesDom.innerHTML = buttons
+        .map((company) => {
+            return `<button class="company-btn" data-id="${company}">${company}</button>`;
+        })
+        .join("");
+};
+displayButtons();
