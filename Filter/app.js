@@ -4,7 +4,12 @@ let filterProducts = [...products];
 const productsContainer = document.querySelector(".products-container");
 
 const displayProducts = () => {
-    //  if statement
+    // no available text
+    if (filterProducts.length < 1) {
+        productsContainer.innerHTML = `<h6>Sorry, no products are available to match in your seach<h6/>`;
+        return;
+    }
+
     productsContainer.innerHTML = filterProducts
         .map(
             // destruction
