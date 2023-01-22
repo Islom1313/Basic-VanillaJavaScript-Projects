@@ -57,3 +57,20 @@ const displayButtons = () => {
         .join("");
 };
 displayButtons();
+
+// filter function in usecase based on company
+
+companiesDom.addEventListener("click", (e) => {
+    const el = e.target;
+    if (el.classList.contains("company-btn")) {
+        if (el.dataset.id === "all") {
+            filterProducts = [...products];
+        } else {
+            filterProducts = products.filter((product) => {
+                return product.company === el.dataset.id;
+            });
+        }
+    }
+    searchInput.value = "";
+    displayProducts();
+});
