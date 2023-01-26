@@ -59,7 +59,7 @@ scrollLinks.forEach(function(link) {
 
         const id = e.currentTarget.getAttribute("href").slice(1);
         const element = document.getElementById(id);
-        // calculate the heights
+        // calculate the heights by getBoundingClientRect
         const navHeight = navbar.getBoundingClientRect().height;
         const containerHeight = linksContainer.getBoundingClientRect().height;
         const fixedNav = navbar.classList.contains("fixed-nav");
